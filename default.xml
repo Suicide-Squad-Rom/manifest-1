@@ -15,6 +15,14 @@
            fetch="https://github.com/AOSP-RRO"
 	   revision="marshmallow" />
 
+  <remote  name="crd"
+           fetch="https://github.com/Cardinal-AOSP"
+           revision="crd6.0" />
+  
+  <remote  name="bb"
+           fetch="https://bitbucket.org/UBERTC"
+           revision="master" />
+
   <default revision="refs/tags/android-6.0.1_r24"
            remote="aosp"
            sync-j="8"
@@ -22,10 +30,13 @@
            sync-f="true"
            sync-q="true" />
 
-  <project name="platform_build" path="build" groups="pdk,tradefed" remote="rro" >
+ <project name="build" path="build" remote="crd" revision="rebase" >
     <copyfile src="core/root.mk" dest="Makefile" />
-    <copyfile src="build.sh" dest="build.sh" />
   </project>
+
+  <!-- Cardinal-AOSP -->
+  <project name="manifest" path="manifest" remote="crd" revision="rebase" />
+  <project name="vendor_cardinal" path="vendor/cardinal" remote="crd" revision="rebase" />
 
 <!-- AOSP-RRO -->
   <project name="platform_art" path="art" groups="pdk" remote="rro" />
@@ -73,8 +84,7 @@
   <project path="system/keymaster" name="platform_system_keymaster" remote="rro" />
   <project path="system/security" name="platform_system_security" remote="rro" />
   <project name="platform_system_vold" groups="pdk" path="system/vold" remote="rro" />
-  <project name="platform_vendor_aosp" path="vendor/aosp" remote="rro" />
-  <project name="manifest" path="manifest" remote="rro" />
+  <project name="manifest" path="manifest" remote="crd" revision="rebase" />
   
 <!-- CyanogenMod -->
   <project name="CyanogenMod/android_bionic" path="bionic" groups="pdk" remote="github" revision="cm-13.0" />
@@ -529,5 +539,13 @@
   <project path="packages/apps/SamsungServiceMode" name="packages_apps_SamsungServiceMode" remote="slim" />
   <!-- qrngd -->
   <project path="external/qrngd" name="android_external_qrngd" remote="slim" />
+
+  <!--UBERTC-->
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.3-uber" name="arm-eabi-5.3" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.3-uber" name="arm-linux-androideabi-5.3" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.3-kernel" name="aarch64-linux-android-5.3-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" name="arm-eabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" name="arm-linux-androideabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="aarch64-linux-android-4.9-kernel" remote="bb" revision="master" />
 
 </manifest>
