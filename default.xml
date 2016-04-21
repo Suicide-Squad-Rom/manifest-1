@@ -84,8 +84,7 @@
   <project path="system/keymaster" name="platform_system_keymaster" remote="rro" />
   <project path="system/security" name="platform_system_security" remote="rro" />
   <project name="platform_system_vold" groups="pdk" path="system/vold" remote="rro" />
-  <project name="manifest" path="manifest" remote="crd" revision="rebase" />
-  
+ 
 <!-- CyanogenMod -->
   <project name="CyanogenMod/android_bionic" path="bionic" groups="pdk" remote="github" revision="cm-13.0" />
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-13.0" />
