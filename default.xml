@@ -32,7 +32,7 @@
   <!-- AOSP-RRO -->
   <project name="platform_art" path="art" groups="pdk" remote="rro" />
   <project name="platform_bootable_recovery" path="bootable/recovery" remote="rro" />
-  <project name="platform_external_sepolicy" path="external/sepolicy" groups="pdk" remote="rro" />
+  <project name="platform_external_sepolicy" path="external/sepolicy" remote="rro" revision="oms" />
   <project name="platform_external_dhcpcd" path="external/dhcpcd" remote="rro" />
   <project name="platform_frameworks_av" path="frameworks/av" groups="pdk" remote="rro" />
   <project name="platform_frameworks_opt_net_ims" path="frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs" remote="rro" />
@@ -506,13 +506,13 @@
   <project path="external/qrngd" name="android_external_qrngd" remote="slim" />
 
   <!-- CARDINAL-AOSP BEGINS-->
-  <project name="build" path="build" remote="crd" >
+  <project name="build" path="build" remote="crd" revision="oms" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project name="frameworks_base" path="frameworks/base" remote="crd" />
-  <project name="packages_apps_Settings" path="packages/apps/Settings" remote="crd" />
-  <project name="vendor_cardinal" path="vendor/cardinal" remote="crd" />
-  <project name="manifest" path="manifest" remote="crd" />
+  <project name="frameworks_base" path="frameworks/base" remote="crd" revision="oms" />
+  <project name="packages_apps_Settings" path="packages/apps/Settings" remote="crd" revision="oms" />
+  <project name="vendor_cardinal" path="vendor/cardinal" remote="crd" revision="oms" />
+  <project name="manifest" path="manifest" remote="crd" revision="oms" />
   <project path="OTA" name="Cardinal-Devices/OTA" remote="github" revision="crd6.0" >
     <copyfile src="ota_conf" dest="ota_conf" />
   </project>
@@ -532,15 +532,17 @@
   <project path="packages/apps/AudioFX" name="packages_apps_AudioFX" remote="slim" />
   <project path="packages/apps/Eleven" name="CyanogenMod/android_packages_apps_Eleven" remote="github" revision="cm-13.0" />
   <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="crd" revision="crd6.0" />
-  <project name="frameworks_native" path="frameworks/native" remote="crd" />
+  <project name="frameworks_native" path="frameworks/native" remote="crd" revision="oms"/>
   <project name="hardware_libhardware" path="hardware/libhardware" remote="crd" />
   <project name="packages_apps_PhoneCommon" path="packages/apps/PhoneCommon" remote="crd" />
   <project name="packages_apps_Snap" path="packages/apps/Snap" remote="crd" />
   <project name="packages_apps_Stk" path="packages/apps/Stk" remote="crd" />
   <project path="packages/apps/Calendar" name="packages_apps_Calendar" remote="crd" />
-
-    <!-- CARDINAL-AOSP ENDS -->
+  <!-- CARDINAL-AOSP ENDS -->
   
+  <!-- Masquerade -->
+  <project path="packages/apps/masquerade" name="TeamSubstratum/masquerade" remote="github" revision="master" />
+
   <!-- UBERTC BEGINS -->
   <!-- arm-eabi -->
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8-uber" name="UBERTC/arm-eabi-4.8" remote="bb" revision="master" />
