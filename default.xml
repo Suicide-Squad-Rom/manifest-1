@@ -23,7 +23,7 @@
            fetch="https://bitbucket.org/"
            revision="master" />
 
-  <default revision="refs/tags/android-6.0.1_r61"
+  <default revision="refs/tags/android-6.0.1_r62"
            remote="aosp"
            sync-j="8"
            sync-c="true"
@@ -35,10 +35,9 @@
   <project name="AOSP-RRO/platform_external_sepolicy" path="external/sepolicy" groups="pdk" remote="gh" revision="marshmallow" />
   <project name="platform_external_dhcpcd" path="external/dhcpcd" remote="rro" />
   <project name="AOSP-RRO/platform_frameworks_av" path="frameworks/av" remote="github" revision="marshmallow"/>
-  <project name="platform_frameworks_opt_net_ims" path="frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs" remote="rro" />
+  <project name="AOSP-RRO/platform_frameworks_opt_net_ims" path="frameworks/opt/net/ims" groups="pdk" remote="gh" revision="r24" />
   <project name="platform_frameworks_opt_net_wifi" path="frameworks/opt/net/wifi" remote="rro" groups="pdk" />
   <project name="platform_frameworks_opt_telephony" path="frameworks/opt/telephony" groups="pdk" remote="rro" />
-  <project name="platform_hardware_ril" path="hardware/ril-caf" groups="pdk" remote="rro" />
   <project name="platform_hardware_broadcom_libbt" path="hardware/broadcom/libbt" remote="rro" />
   <project name="platform_hardware_broadcom_wlan" path="hardware/broadcom/wlan" remote="rro" />
   <project name="platform_packages_apps_BasicSmsReceiver" path="packages/apps/BasicSmsReceiver" remote="rro" />
@@ -62,7 +61,7 @@
   <project name="platform_system_security" path="system/security" remote="rro" />
   <project name="platform_system_vold" path="system/vold" groups="pdk" remote="rro" />
 
-<!-- CyanogenMod,Slim,Tesla,Validus -->
+<!-- CyanogenMod -->
   <project path="bionic" name="bionic" remote="tm" />
   <project path="device/qcom/common" name="device_qcom_common" remote="slim" />
   <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="vm" />
@@ -104,8 +103,6 @@
   <project path="hardware/cyanogen" name="SlimRoms/hardware_cyanogen" remote="github" revision="mm6.0" />
   <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="slim" />
   <project path="hardware/qcom/bt" name="hardware_qcom_bt" remote="slim" />
-  <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" remote="slim" />
-  <project path="hardware/ril" name="hardware_ril" remote="vm" />
   <project path="system/media" name="android_system_media" remote="slim" />
   <project path="system/netd" name="android_system_netd" remote="slim" />
   <project path="system/qcom" name="android_system_qcom" remote="slim" />
@@ -142,6 +139,9 @@
   <project path="vendor/qcom/opensource/dpm" name="CyanogenMod/android_vendor_qcom_opensource_dpm" remote="github" revision="cm-13.0" />
   <project path="vendor/qcom/opensource/time-services" name="CyanogenMod/android_vendor_qcom_opensource_time-services" remote="github" revision="cm-13.0" />
 <!-- AOSP -->
+
+
+
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
@@ -182,7 +182,7 @@
   <project path="external/apache-xml" name="platform/external/apache-xml" groups="pdk" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs,pdk-fs" />
-  <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" />
+  <project path="external/boringssl" name="CyanogenMod/android_external_boringssl" groups="pdk" remote="github" revision="cm-13.0" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
@@ -412,7 +412,6 @@
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84" />
   <project path="hardware/qcom/power" name="hardware_qcom_power" remote="slim" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
-  <project path="hardware/qcom/wlan-caf" name="hardware_qcom_wlan" remote="slim" revision="mm6.0-caf" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" groups="generic_fs" />
   <project path="packages/apps/BluetoothExt" name="packages_apps_BluetoothExt" remote="slim" />
@@ -539,9 +538,12 @@
   <project name="packages_apps_PhoneCommon" path="packages/apps/PhoneCommon" remote="crd" />
   <project name="packages_apps_Stk" path="packages/apps/Stk" remote="crd" />
   <project path="packages/apps/Calendar" name="packages_apps_Calendar" remote="crd" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="crd" />
+  <project name="hardware_ril" path="hardware/ril-caf" remote="crd" revision="crd6.0-caf" />
+  <project name="hardware_ril" path="hardware/ril" remote="crd" revision="crd6.0" />
+  <project path="hardware/qcom/wlan-caf" name="hardware_qcom_wlan" remote="crd" revision="crd6.0-caf" />
+  <project name="hardware_qcom_wlan" path="hardware/qcom/wlan" remote="crd" revision="crd6.0" />
   <!-- CARDINAL-AOSP ENDS -->
-  
-  <project path="packages/apps/FloatingActionButton" name="FloatingActionButton" remote="vm" />
   
   <!-- Substratum -->
   <project name="TurboROM/packages_apps_Substratum" path="packages/apps/Substratum" remote="github" revision="m" /> 
@@ -551,14 +553,33 @@
   <!-- arm-eabi -->
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8-uber" name="UBERTC/arm-eabi-4.8" remote="bb" revision="master" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-uber" name="DespairFactor/arm-eabi-4.9" remote="bb" revision="master" />
-
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.x-uber" name="DespairFactor/arm-eabi-5.x" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.0-uber" name="UBERTC/arm-eabi-6.0" remote="bb" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-7.0-uber" name="UBERTC/arm-eabi-7.0" remote="bb" />
   
   <!-- aarch64-linux-android -->
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-uber" name="UBERTC/aarch64-linux-android-4.9" remote="bb" />
   <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel" name="DespairFactor/aarch64-linux-android-4.9-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.x-kernel" name="DespairFactor/aarch64-linux-android-5.x-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.x-kernel" name="DespairFactor/aarch64-linux-android-6.x-kernel" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-7.0-kernel" name="DespairFactor/aarch64-linux-android-7.0-kernel" remote="bb" revision="master" />
 
   <!-- arm-linux-androideabi -->
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.8-uber" name="UBERTC/arm-linux-androideabi-4.8" remote="bb" />
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-uber" name="DespairFactor/arm-linux-androideabi-4.9" remote="bb" revision="master" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-5.x-uber" name="DespairFactor/arm-linux-androideabi-5.x" remote="bb" revision="master" />
   <!-- UBERTC ENDS -->
+
+  <!-- Linaro -->
+  <!-- arm-eabi -->
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9-linaro" name="DespairFactor/arm-eabi-4.9" remote="bb" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-5.x-linaro" name="DespairFactor/arm-eabi-5.x" remote="bb" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-6.x-linaro" name="DespairFactor/arm-eabi-6.x" remote="bb" />
+
+  <!-- aarch64-linux-android -->
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9-kernel-linaro" name="DespairFactor/aarch64-linux-android-4.9-kernel-linaro" remote="bb" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-5.x-kernel-linaro" name="DespairFactor/aarch64-linux-android-5.x-kernel-linaro" remote="bb"/>
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.x-kernel-linaro" name="DespairFactor/aarch64-linux-android-6.x-kernel-linaro" remote="bb" />
+  <!-- Linaro ENDS -->
+<!-- End Toolchains -->
 </manifest>
